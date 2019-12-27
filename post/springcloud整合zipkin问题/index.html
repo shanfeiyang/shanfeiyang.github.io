@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>springcloud整合zipkin问题(转) - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="shanfeiyang" /><meta name="description" content="注册中心为 nacos 有一天把代码更新完推到gitlab后，用jenkins重启完项目发现一直报错，去看日志才发现后台在疯狂报错，错误如下 1 2 3 4 5 zipkin:base-url:http://47.111.134.3:9411/enabled:truesender:type:web" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with theme even" />
+
+
+<link rel="canonical" href="https://shanfeiyang.github.io/post/springcloud%E6%95%B4%E5%90%88zipkin%E9%97%AE%E9%A2%98/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="springcloud整合zipkin问题(转)" />
+<meta property="og:description" content="注册中心为 nacos 有一天把代码更新完推到gitlab后，用jenkins重启完项目发现一直报错，去看日志才发现后台在疯狂报错，错误如下 1 2 3 4 5 zipkin:base-url:http://47.111.134.3:9411/enabled:truesender:type:web" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shanfeiyang.github.io/post/springcloud%E6%95%B4%E5%90%88zipkin%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2019-12-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-12-27T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="springcloud整合zipkin问题(转)">
+<meta itemprop="description" content="注册中心为 nacos 有一天把代码更新完推到gitlab后，用jenkins重启完项目发现一直报错，去看日志才发现后台在疯狂报错，错误如下 1 2 3 4 5 zipkin:base-url:http://47.111.134.3:9411/enabled:truesender:type:web">
+
+
+<meta itemprop="datePublished" content="2019-12-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1266">
+
+
+
+<meta itemprop="keywords" content="zipkin," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="springcloud整合zipkin问题(转)"/>
+<meta name="twitter:description" content="注册中心为 nacos 有一天把代码更新完推到gitlab后，用jenkins重启完项目发现一直报错，去看日志才发现后台在疯狂报错，错误如下 1 2 3 4 5 zipkin:base-url:http://47.111.134.3:9411/enabled:truesender:type:web"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Even</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Even</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">springcloud整合zipkin问题(转)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-12-27 </span>
+        <div class="post-category">
+            <a href="/categories/java/"> java </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>注册中心为 nacos</p>
+
+<p>有一天把代码更新完推到gitlab后，用jenkins重启完项目发现一直报错，去看日志才发现后台在疯狂报错，错误如下
+<img src="https://img-blog.csdnimg.cn/20190910093252771.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3OTY1NzQx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="w">     </span>zipkin<span class="p">:</span><span class="w">
+</span><span class="w">        </span>base-url<span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//<span class="m">47.111</span>.<span class="m">134.3</span><span class="p">:</span><span class="m">9411</span>/<span class="w">
+</span><span class="w">        </span>enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">        </span>sender<span class="p">:</span><span class="w">
+</span><span class="w">          </span>type<span class="p">:</span><span class="w"> </span>web</code></pre></td></tr></table>
+</div>
+</div>
+<p>原因：
+Spring Cloud把 47.111.134.3 当作了服务发现组件里面的服务名称；于是，Nacos Client尝试从Nacos Server寻找一个名为 localhost:9411 的服务…这个服务根本不存在啊，于是就疯狂报异常（因为Nacos Client本地定时任务，刷新本地服务发现缓存）</p>
+
+<p>解决方案</p>
+
+<p>知道原因之后，要想解决很简单：</p>
+
+<p>•让Spring Cloud 正确识别http:<a href="http://47.111.134.3:9411/">http://47.111.134.3:9411/</a> ，当成一个URL，而不要当做服务名。</p>
+
+<p>•把Zipkin Server注册到Nacos</p>
+
+<p>谈谈Zipkin Server注册到服务发现组件</p>
+
+<p>Zipkin Server 官方并不支持注册到服务发现组件！！！！在 <a href="https://github.com/openzipkin/zipkin/issues/2540">https://github.com/openzipkin/zipkin/issues/2540</a> 里面，官方人员解答得很清楚了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">@nkorange[1] thank you for reaching out. We have had several users ask about service discovery with Zipkin Server over the years (see #1870[2]) and less ask about dynamic/external configuration. We don&#39;t currently support any service discovery as a first-class feature. There is a workaround to use Eureka mentioned in #1870[3]. So unless a user is using that, or is building a custom Zipkin Server (which we don&#39;t officially support), there should be no service discovery.
+
+If you want to come chat with us on Gitter (https://gitter.im/openzipkin/zipkin[4]) about next steps, please do.
+
+详见 We don&#39;t currently support any service discovery as a first-class feature.</pre></td></tr></table>
+</div>
+</div>
+<p>如果你想要注册到服务发现组件，那么可以参考 <a href="https://github.com/openzipkin/zipkin/issues/1870">https://github.com/openzipkin/zipkin/issues/1870</a> 说明自己改造Zipkin Server让其注册到服务发现组件，但这样做不会得到任何官方的技术支持！！</p>
+
+<p>所以，将Zipkin Server注册到Nacos或者其他服务发现组件，不是最优解。我们的解决方案就演变成了：让Spring Cloud 正确识别 <a href="http://localhost:9411/">http://localhost:9411/</a> ，当成一个URL，而不要当做服务名。这一种解决方案。</p>
+
+<p>配置走你！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="w">      </span>zipkin<span class="p">:</span><span class="w">
+</span><span class="w">        </span>base-url<span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//<span class="m">47.111</span>.<span class="m">134.3</span><span class="p">:</span><span class="m">9411</span>/<span class="w">
+</span><span class="w">        </span>enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">        </span>sender<span class="p">:</span><span class="w">
+</span><span class="w">          </span>type<span class="p">:</span><span class="w"> </span>web<span class="w">
+</span><span class="w">        </span>discovery-client-enabled<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>从这个配置的注释（ 代码见 org.springframework.cloud.sleuth.zipkin2.ZipkinProperties#discoveryClientEnabled ）来看，只要设置成false，那么就会把 <a href="http://localhost:9411/">http://localhost:9411/</a> 当成一个URL，而不是服务名称了。</p>
+
+<p>你以为已经牛逼了，然而当你去测试的时候，发现 然并卵 ，一点效果都没有。</p>
+
+<p>Spring Cloud Sleuth Bug、解决方案与Pull Request</p>
+
+<p>问题代码在这里：org.springframework.cloud.sleuth.zipkin2.sender.ZipkinRestTemplateSenderConfiguration.DiscoveryClientZipkinUrlExtractorConfiguration.ZipkinClientNoOpConfiguration ，里面是这么玩的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="nd">@Configuration</span>
+    <span class="nd">@ConditionalOnProperty</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&#34;spring.zipkin.discoveryClientEnabled&#34;</span><span class="o">,</span> <span class="n">havingValue</span> <span class="o">=</span> <span class="s">&#34;false&#34;</span><span class="o">)</span>
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">ZipkinClientNoOpConfiguration</span> <span class="o">{</span>
+     <span class="o">...</span>
+    <span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>当你看到这个代码的时候，就应该知道解决方案啦！那就是你得把配置修改为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="w">      </span>zipkin<span class="p">:</span><span class="w">
+</span><span class="w">        </span>base-url<span class="p">:</span><span class="w"> </span>http<span class="p">:</span>//<span class="m">47.111</span>.<span class="m">134.3</span><span class="p">:</span><span class="m">9411</span>/<span class="w">
+</span><span class="w">        </span>enabled<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">        </span>sender<span class="p">:</span><span class="w">
+</span><span class="w">          </span>type<span class="p">:</span><span class="w"> </span>web<span class="w">
+</span><span class="w">        </span>discoveryClientEnabled<span class="p">:</span><span class="w"> </span><span class="kc">false</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>就可以了！</p>
+
+<p>这其实是Spring Cloud Sleuth子项目 spring-cloud-sleuth-zipkin 的一个Bug！</p>
+
+<p>•相关的Issue在：<a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1376">https://github.com/spring-cloud/spring-cloud-sleuth/issues/1376</a></p>
+
+<p>•解决的Pul Request在：<a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1379">https://github.com/spring-cloud/spring-cloud-sleuth/pull/1379</a> ，代码已经合并了，在 Spring Cloud Greenwich SR3 版本中会修正！</p>
+
+<p>简单总结一下：</p>
+
+<p>•如果你使用的是Greenwich SR3之前的版本，务必使用 spring.zipkin.discoveryClientEnabled = false ，否则配置不生效！！</p>
+
+<p>•如果你使用的是Greenwich SR3及更高版本，可使用 discovery-client-enabled 或者 discoveryClientEnabled 。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">shanfeiyang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-12-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/zipkin/">zipkin</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/springboot%E6%B3%A8%E8%A7%A3%E6%A0%A1%E9%AA%8C/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">springboot参数校验</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E5%9B%BD%E9%99%85%E5%8C%96/">
+            <span class="next-text nav-default">参数校验国际化</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://shanfeiyang.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">olOwOlo</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

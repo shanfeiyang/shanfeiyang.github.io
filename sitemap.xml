@@ -1,223 +1,127 @@
-<?xml-stylesheet type="text/xsl" href="http://shanfeiyang.github.io/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://shanfeiyang.github.io/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://shanfeiyang.github.io/post/even-preview/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/about/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/about/</loc>
-    <lastmod>2017-08-28T21:41:52+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/post/2020/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/categories/</loc>
-    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/categories/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/</loc>
-    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/post/</loc>
-    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/post/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/tags/</loc>
-    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/tags/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/tags/theme-preview/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/categories/java/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/categories/theme-preview/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/categories/life/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/categories/category-2/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/tags/life/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/categories/category-3/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/tags/logback/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/tags/preview/</loc>
-    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/tags/tag-3/</loc>
-    <lastmod>2018-07-10T00:00:00+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/post/hidden-post/</loc>
-    <lastmod>2018-03-08T22:01:19+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/post/logback%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/tags/english/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/tags/springboot/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/categories/english/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/post/english-preview/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/post/springboot%E6%B3%A8%E8%A7%A3%E6%A0%A1%E9%AA%8C/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/tags/tag-2/</loc>
-    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/post/japanese-preview/</loc>
-    <lastmod>2017-08-30T01:53:34+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/post/springcloud%E6%95%B4%E5%90%88zipkin%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/tags/tag-4/</loc>
-    <lastmod>2017-08-30T01:53:34+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/tags/zipkin/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E/</loc>
-    <lastmod>2017-08-30T01:53:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/categories/%E6%97%A5%E6%9C%AC%E8%AA%9E/</loc>
-    <lastmod>2017-08-30T01:53:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/post/chinese-preview/</loc>
-    <lastmod>2017-08-30T01:37:56+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/post/%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C%E5%9B%BD%E9%99%85%E5%8C%96/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/tags/tag-1/</loc>
-    <lastmod>2017-08-30T01:37:56+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/tags/%E4%B8%AD%E6%96%87/</loc>
-    <lastmod>2017-08-30T01:37:56+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/categories/%E4%B8%AD%E6%96%87/</loc>
-    <lastmod>2017-08-30T01:37:56+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/post/shortcodes/</loc>
-    <lastmod>2018-02-01T18:01:23+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/post/%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/tags/shortcodes/</loc>
-    <lastmod>2018-02-01T18:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/categories/shortcodes/</loc>
-    <lastmod>2018-02-01T18:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/post/js-flowchart-diagrams/</loc>
-    <lastmod>2015-03-04T21:57:50+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/post/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E6%B3%A8%E5%85%A5%E5%8F%82%E6%95%B0%E5%80%BC/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://shanfeiyang.github.io/post/js-sequence-diagrams/</loc>
-    <lastmod>2015-03-04T21:57:45+08:00</lastmod>
+    <loc>https://shanfeiyang.github.io/post/springboot%E8%B7%A8%E5%9F%9F%E8%AE%BE%E7%BD%AE/</loc>
+    <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/tags/syntax-highlighting/</loc>
-    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/categories/syntax-highlighting/</loc>
-    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/post/syntax-highlighting/</loc>
-    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/tags/tag-5/</loc>
-    <lastmod>2018-11-05T16:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://shanfeiyang.github.io/post/logback%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
