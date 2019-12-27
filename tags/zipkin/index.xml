@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>zipkin on Even - A super concise theme for Hugo</title>
-    <link>https://shanfeiyang.github.io/tags/zipkin/</link>
+    <link>http://localhost:1313/tags/zipkin/</link>
     <description>Recent content in zipkin on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 27 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://shanfeiyang.github.io/tags/zipkin/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/zipkin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>springcloud整合zipkin问题(转)</title>
-      <link>https://shanfeiyang.github.io/post/springcloud%E6%95%B4%E5%90%88zipkin%E9%97%AE%E9%A2%98/</link>
+      <link>http://localhost:1313/post/springcloud%E6%95%B4%E5%90%88zipkin%E9%97%AE%E9%A2%98/</link>
       <pubDate>Fri, 27 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://shanfeiyang.github.io/post/springcloud%E6%95%B4%E5%90%88zipkin%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://localhost:1313/post/springcloud%E6%95%B4%E5%90%88zipkin%E9%97%AE%E9%A2%98/</guid>
       <description>注册中心为 nacos 有一天把代码更新完推到gitlab后，用jenkins重启完项目发现一直报错，去看日志才发现后台在疯狂报错，错误如下 1 2 3 4 5 zipkin:base-url:http://47.111.134.3:9411/enabled:truesender:type:web</description>
     </item>
     
