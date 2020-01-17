@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="shanfeiyang" /><meta name="description" content="#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 4 5 ```java DELIMITER $$ 或 DELIMITER // ``` 声明存储过程: 1 2 3 ```java CREATE PROCEDURE demo_in_parameter(IN p_in int) ``` 存储过程开始和结束符号: 1 2 3 ```java BEGIN ...." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="shanfeiyang" /><meta name="description" content="#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 DELIMITER $$ 或 DELIMITER // 声明存储过程: 1 CREATE PROCEDURE demo_in_parameter(IN p_in int) 存储过程开始和结束符号: 1 BEGIN .... END 变量赋值: 1 SET @p_in=1 变量" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="mysql存储过程学习总结" />
-<meta property="og:description" content="#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 4 5 ```java DELIMITER $$ 或 DELIMITER // ``` 声明存储过程: 1 2 3 ```java CREATE PROCEDURE demo_in_parameter(IN p_in int) ``` 存储过程开始和结束符号: 1 2 3 ```java BEGIN ...." />
+<meta property="og:description" content="#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 DELIMITER $$ 或 DELIMITER // 声明存储过程: 1 CREATE PROCEDURE demo_in_parameter(IN p_in int) 存储过程开始和结束符号: 1 BEGIN .... END 变量赋值: 1 SET @p_in=1 变量" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/mysql%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" />
 <meta property="article:published_time" content="2020-01-03T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2020-01-03T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="mysql存储过程学习总结">
-<meta itemprop="description" content="#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 4 5 ```java DELIMITER $$ 或 DELIMITER // ``` 声明存储过程: 1 2 3 ```java CREATE PROCEDURE demo_in_parameter(IN p_in int) ``` 存储过程开始和结束符号: 1 2 3 ```java BEGIN ....">
+<meta itemprop="description" content="#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 DELIMITER $$ 或 DELIMITER // 声明存储过程: 1 CREATE PROCEDURE demo_in_parameter(IN p_in int) 存储过程开始和结束符号: 1 BEGIN .... END 变量赋值: 1 SET @p_in=1 变量">
 
 
 <meta itemprop="datePublished" content="2020-01-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-01-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="100">
+<meta itemprop="wordCount" content="80">
 
 
 
 <meta itemprop="keywords" content="mysql," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="mysql存储过程学习总结"/>
-<meta name="twitter:description" content="#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 4 5 ```java DELIMITER $$ 或 DELIMITER // ``` 声明存储过程: 1 2 3 ```java CREATE PROCEDURE demo_in_parameter(IN p_in int) ``` 存储过程开始和结束符号: 1 2 3 ```java BEGIN ...."/>
+<meta name="twitter:description" content="#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 DELIMITER $$ 或 DELIMITER // 声明存储过程: 1 CREATE PROCEDURE demo_in_parameter(IN p_in int) 存储过程开始和结束符号: 1 BEGIN .... END 变量赋值: 1 SET @p_in=1 变量"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,7 +132,7 @@
         <div class="post-category">
             <a href="/categories/java/"> java </a>
             </div>
-          <span class="more-meta"> 100 words </span>
+          <span class="more-meta"> 80 words </span>
           <span class="more-meta"> 1 min read </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -150,70 +150,50 @@
 <p>声明语句结束符，可以自定义:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">```java
-DELIMITER $$
-或
-DELIMITER //
-```</pre></td></tr></table>
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="n">DELIMITER</span> <span class="n">$$</span>
+    <span class="n">或</span>
+    <span class="n">DELIMITER</span> <span class="o">//</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>声明存储过程:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">```java
-CREATE PROCEDURE demo_in_parameter(IN p_in int)    
-```</pre></td></tr></table>
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="n">CREATE</span> <span class="n">PROCEDURE</span> <span class="nf">demo_in_parameter</span><span class="o">(</span><span class="n">IN</span> <span class="n">p_in</span> <span class="kt">int</span><span class="o">)</span>    </code></pre></td></tr></table>
 </div>
 </div>
 <p>存储过程开始和结束符号:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">    ```java
-    BEGIN .... END  
-     ```</pre></td></tr></table>
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="n">BEGIN</span> <span class="o">....</span> <span class="n">END</span>  </code></pre></td></tr></table>
 </div>
 </div>
 <p>变量赋值:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">```java
-SET @p_in=1  
-```</pre></td></tr></table>
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="n">SET</span> <span class="nd">@p_in</span><span class="o">=</span><span class="n">1</span>  </code></pre></td></tr></table>
 </div>
 </div>
 <p>变量定义:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></pre></td>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">```java
-DECLARE l_int int unsigned default 4000000; 
-```</pre></td></tr></table>
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="n">DECLARE</span> <span class="n">l_int</span> <span class="kt">int</span> <span class="n">unsigned</span> <span class="k">default</span> <span class="n">4000000</span><span class="o">;</span> </code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -239,8 +219,8 @@ DECLARE l_int int unsigned default 4000000;
           </div>
       <nav class="post-nav">
         
-        <a class="next" href="/post/2020/">
-            <span class="next-text nav-default">2020</span>
+        <a class="next" href="/post/logback%E9%85%8D%E7%BD%AE%E6%80%BB%E7%BB%93/">
+            <span class="next-text nav-default">logback配置总结</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

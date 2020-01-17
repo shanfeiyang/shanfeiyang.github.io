@@ -17,7 +17,7 @@
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/post/mysql%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</guid>
-      <description>#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 4 5 ```java DELIMITER $$ 或 DELIMITER // ``` 声明存储过程: 1 2 3 ```java CREATE PROCEDURE demo_in_parameter(IN p_in int) ``` 存储过程开始和结束符号: 1 2 3 ```java BEGIN ....</description>
+      <description>#存储过程学习总结 声明语句结束符，可以自定义: 1 2 3 DELIMITER $$ 或 DELIMITER // 声明存储过程: 1 CREATE PROCEDURE demo_in_parameter(IN p_in int) 存储过程开始和结束符号: 1 BEGIN .... END 变量赋值: 1 SET @p_in=1 变量</description>
     </item>
     
   </channel>

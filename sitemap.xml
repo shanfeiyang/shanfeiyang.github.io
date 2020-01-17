@@ -52,25 +52,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/2020/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/categories/life/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/life/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/logback/</loc>
     <lastmod>2019-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
