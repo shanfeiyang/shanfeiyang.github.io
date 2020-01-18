@@ -6,10 +6,19 @@
     <description>Recent content in java on 未来可期</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>复杂的 if-else 语句“优雅处理”的思路</title>
+      <link>http://localhost:1313/post/%E5%A4%8D%E6%9D%82%E7%9A%84-if-else-%E8%AF%AD%E5%8F%A5%E4%BC%98%E9%9B%85%E5%A4%84%E7%90%86%E7%9A%84%E6%80%9D%E8%B7%AF/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/%E5%A4%8D%E6%9D%82%E7%9A%84-if-else-%E8%AF%AD%E5%8F%A5%E4%BC%98%E9%9B%85%E5%A4%84%E7%90%86%E7%9A%84%E6%80%9D%E8%B7%AF/</guid>
+      <description>需求 假设有这么一个需求： 一个电商系统，当用户消费满1000 金额，可以根据用户VIP等级，享受打折优惠。根据用户VIP等级，计算出用户最终的费</description>
+    </item>
     
     <item>
       <title>mysql存储过程学习总结</title>
